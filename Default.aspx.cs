@@ -15,12 +15,12 @@ namespace WebApplication2
     {
        
         
-        private readonly string api_key;
-        private readonly string api_secret;
-        private readonly string stationId;
+        private readonly string api_key; //replace with your api key
+        private readonly string api_secret; //replace with your api secret
+        private readonly string stationId; replace with your stationID
         private readonly string url;
         private string jsonCurrentWx;
-        private int[] lsids = { 62412, 624144, 624131, 624130 };
+        private int[] lsids = { 62412, 624144, 624131, 624130 }; //modify to represent your lsids
         private HttpResponseMessage jsonResponse;
         private static RootObject rootObject;
         private Type rootObjectType;
