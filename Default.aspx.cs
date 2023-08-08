@@ -13,9 +13,7 @@ namespace WebApplication2
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-       
-        
-        private readonly string api_key; //replace with your api key
+       private readonly string api_key; //replace with your api key
         private readonly string api_secret; //replace with your api secret
         private readonly string stationId; replace with your stationID
         private readonly string url;
@@ -110,6 +108,7 @@ namespace WebApplication2
             EnableAllButtons();
         }
 
+        //The following function uses a jsonOBJ to parse the json object, thus avoiding the need to use reflection to deserialize
         protected void btnSensorValues_Click(object sender, EventArgs e)
         {
             dynamic jsonObj = JObject.Parse(txtJson.Text);
@@ -193,8 +192,8 @@ namespace WebApplication2
             EnableAllButtons();
         }
 
-
-            protected void btnSensorValues4_Click(object sender, EventArgs e)
+    
+        protected void btnSensorValues4_Click(object sender, EventArgs e)
         {
             Sensor sensor = rootObject.sensors.FirstOrDefault(s => s.sensor_type == 242); ;
             var data242 = JsonConvert.DeserializeObject<List<SensorData242>>(sensor.data.ToString());
@@ -214,8 +213,7 @@ namespace WebApplication2
 
         protected void PopulateListBox(ListBox lst, int lsid)
         {
-
-            EnableAllButtons();
+             EnableAllButtons();
         }
 
         protected void EnableAllButtons()
