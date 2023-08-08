@@ -5,6 +5,8 @@ using System.Web;
 
 namespace WebApplication2
 {
+    //The classes below are specific to the sensors in my Vantage Pro2. Edit this file as needed to model the sensors in your ISS.
+    //These classes are needed only to use reflection for deserializing the json object.
     public class SensorData504
     {
         public int battery_voltage { get; set; }
